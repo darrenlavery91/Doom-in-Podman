@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  collections:
+    - containers.podman
+  tasks:
+    - name: Entering doom hell
+      containers.podman.podman_container:
+        name: doom_game
+        image: "callumhoughton22/doom-in-docker:0.1"
+        state: started
+        ports: 8080:8080
+      register: hell
+
+    - debug:
+        msg: "Hell portal is here: http://127.0.0.1:8080"
+      when: hell.container.State.ExitCode == 0
+    
+    - debug:
+        msg: "Hell portal failed"
+      when: hell.container.State.ExitCode == 1

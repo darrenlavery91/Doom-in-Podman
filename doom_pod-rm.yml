@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  collections:
+    - containers.podman
+  tasks:
+    - name: warping doom back to earth
+      containers.podman.podman_container:
+        name: doom_game
+        image: "callumhoughton22/doom-in-docker:0.1" 
+        state: absent
+
