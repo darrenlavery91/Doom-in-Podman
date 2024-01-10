@@ -69,14 +69,14 @@ podman machine start
 
 5. Run the Ansible playbook to start the Doom Game container:
    ```bash
-   ansible-playbook your_playbook_file.yml
+   ansible-playbook doom_pod.yml.yml
    ```
 
 6. After successful execution, access the Doom Game through the provided URL.
 
 7. Run the Ansible playbook to stop and remove the Doom Game container:
    ```bash
-   ansible-playbook your_playbook_file.yml
+   ansible-playbook doom_pod-rm.yml
    ```
 
 ## Note:
